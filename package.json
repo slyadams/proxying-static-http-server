@@ -1,0 +1,25 @@
+{
+  "name": "proxying-static-http-server",
+  "version": "1.0.0",
+  "description": "Simple static file server with the option to proxy API calls",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/slyadams/proxying-static-http-server.git"
+  },
+  "author": "Simon Adams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/slyadams/proxying-static-http-server/issues"
+  },
+  "homepage": "https://github.com/slyadams/proxying-static-http-server#readme",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "express": "^4.14.0",
+    "express-http-proxy": "^0.10.1"
+  }
+}
