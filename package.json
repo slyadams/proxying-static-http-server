@@ -1,11 +1,10 @@
 {
   "name": "proxying-static-http-server",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Simple static file server with the option to proxy API calls",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

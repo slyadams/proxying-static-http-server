@@ -7,22 +7,24 @@ var url = require('url');
 
 cli
     .version('1.0.0')
-    .option('-n, --nms [ip]', 'NMS to proxy API calls to [required]')
+    .option('-s, --server [ip]', 'Server to proxy API calls to [required]')
+    .option('-d, --directory [directory]', 'Static file directory [default ./]')
     .option('-p, --port [port]', 'Port to listen on [default 8080]')
 .parse(process.argv);
 
 var app = express();
-if (!cli.nms) {
+if (!cli.server) {
     cli.outputHelp();
     process.exit(0);
 }
 
 var port = cli.port || 8080;
-var nms = cli.nms;
+var directory = cli.directory || './';
+var server = cli.server;
 
-app.use(express.static('./'));
+app.use(express.static(directory));
 
-app.use('/api', proxy(nms, {
+app.use('/api', proxy(server, {
     forwardPath: function(req/*, res*/) {
         return '/api'+url.parse(req.url).path;
     }
